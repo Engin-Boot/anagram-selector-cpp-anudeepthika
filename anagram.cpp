@@ -4,7 +4,7 @@
 #include "anagram.h"
 std::string modifystring(std::string& word)
 {
-   int j = 0; 
+   /*int j = 0; 
     for (int i = 0; i < word.size(); i++) 
     {
         if ((word[i] >= 'A' && word[i] <= 'Z') || 
@@ -14,7 +14,8 @@ std::string modifystring(std::string& word)
             j++; 
         } 
     }
-    std::string s = word.substr(0,j);
+    std::string s = word;*/
+    s.erase(std::remove_if(s.begin(), s.end(), [](char c) { return !std::isalpha(c); } ), s.end());
     std::transform(s.begin(), s.end(), s.begin(), ::tolower);
     std::sort(s.begin(), s.end());
     return s;
