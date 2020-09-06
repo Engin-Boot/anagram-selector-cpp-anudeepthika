@@ -24,8 +24,8 @@ std::string modifystring(std::string& word)
             j++; 
         } 
     }
-    string s = word.substr(0,j);
-    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    std::string s = word.substr(0,j);
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
     sort(s.begin(), s.end());
     return s;
 }
@@ -36,7 +36,7 @@ std::vector<std::string> Anagram::SelectAnagrams(
         const std::vector<std::string>& candidates) 
 {
     //Fill the correct implementation here
-    const std::vector<std::string> v;
+   std::vector<std::string> v;
     for(string can:candidates)
     { 
         if(Anagram::WordPairIsAnagram(word,can)==true)
