@@ -16,14 +16,16 @@ std::string modifystring(std::string& word)
     }
     std::string s = word.substr(0,j);
     std::transform(s.begin(), s.end(), s.begin(), ::tolower);
-    sort(s.begin(), s.end());
+    std::sort(s.begin(), s.end());
     return s;
 }
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) 
 {
     //Fill the correct implementation here
-    std::string s1 = modifystring(word1);
-    std::string s2 = modifystring(word2);
+   std::string str1 = word1;
+   std::string str2 = word2;
+    std::string s1 = modifystring(str1);
+    std::string s2 = modifystring(str2);
     if(s1 != s2)
     return false;
     else return true;
@@ -41,9 +43,6 @@ std::vector<std::string> Anagram::SelectAnagrams(
     { 
         if(Anagram::WordPairIsAnagram(word,can)==true)
             v.push_back(can);
-    }
-    
-    return v;
-    
-    
+    }   
+    return v; 
 }
