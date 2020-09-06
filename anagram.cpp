@@ -1,17 +1,7 @@
-#iclude <bits/stdc++.h> 
+#include <bits/stdc++.h> 
 #include<string>
 #include<algorithm>
 #include "anagram.h"
-
-bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) 
-{
-    //Fill the correct implementation here
-    std::string s1 = modifystring(word1);
-    std::string s2 = modifystring(word2);
-    if(s1 != s2)
-    return false;
-    else return true;
-}
 std::string modifystring(std::string& word)
 {
    int j = 0; 
@@ -29,6 +19,16 @@ std::string modifystring(std::string& word)
     sort(s.begin(), s.end());
     return s;
 }
+bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) 
+{
+    //Fill the correct implementation here
+    std::string s1 = modifystring(word1);
+    std::string s2 = modifystring(word2);
+    if(s1 != s2)
+    return false;
+    else return true;
+}
+
 
 
 std::vector<std::string> Anagram::SelectAnagrams(
@@ -37,7 +37,7 @@ std::vector<std::string> Anagram::SelectAnagrams(
 {
     //Fill the correct implementation here
    std::vector<std::string> v;
-    for(string can:candidates)
+    for(std::string can:candidates)
     { 
         if(Anagram::WordPairIsAnagram(word,can)==true)
             v.push_back(can);
