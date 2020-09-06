@@ -15,6 +15,8 @@ TEST_CASE("reports non-anagrams") {
 TEST_CASE("recognizes anagrams when there are case- and space- differences") {
     REQUIRE(Anagram::WordPairIsAnagram("New York Times", "monkeys write")
         == true);
+    REQUIRE(Anagram::WordPairIsAnagram("Co-ordinate", "ordinateco")
+        == true);
 }
 
 TEST_CASE("selects anagrams of a word") {
